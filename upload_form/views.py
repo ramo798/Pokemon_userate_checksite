@@ -2,7 +2,9 @@ from django.shortcuts import render, redirect
 from django.template.context_processors import csrf
 from django.conf import settings
 from upload_form.models import FileNameModel
-import sys, os
+from main.models import pokeinfo
+import sys, os, csv
+
 UPLOADE_DIR = os.path.dirname(os.path.abspath(__file__)) + '/static/files/'
 
 def form(request):
@@ -18,6 +20,32 @@ def form(request):
 
     insert_data = FileNameModel(file_name = file.name)
     insert_data.save()
+    #csv処理
+    with open(path, 'r') as f:
+        reader = csv.reader(f)
+        header = next(reader)
+        for row in reader:
+            mode = pokeinfo()
+            mode.pokename = row[0]
+            mode.pokerate = row[1]
+            mode.waza1 = row[3]
+            mode.waza2 = row[4]
+            mode.waza3 = row[5]
+            mode.waza4 = row[6]
+            mode.waza5 = row[7]
+            mode.waza6 = row[8]
+            mode.waza7 = row[9]
+            #mode.waza8 = row[10]
+            mode.wazarate1 = row[11]
+            mode.wazarate2 = row[12]
+            mode.wazarate3 = row[13]
+            mode.wazarate4 = row[14]
+            mode.wazarate5 = row[15]
+            mode.wazarate6 = row[16]
+            mode.wazarate7 = row[17]
+            #mode.wazarate8 = row[18]
+            mode.save()
+
 
     return redirect('upload_form:complete')
 
