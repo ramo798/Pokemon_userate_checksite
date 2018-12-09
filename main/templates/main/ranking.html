@@ -3,6 +3,7 @@
   <head>
     <title>poke</title>
     <meta charset="utf-8"/>
+    <meta name="viewport" content="width=360,initial-scale=1">
     <link rel="stylesheet" type="text/css" href="ranking.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
   </head>
@@ -10,15 +11,17 @@
     <div id="outer">
       <div id="inner">
         <div id="header">
-          <p>poke info</p>
+          <a href="ranking.html">poke info</a>
         </div>
         <div id="main">
 
           <!--棒グラフの本体-->
-          <canvas id="myChart" width="50" height="50"></canvas>
+          <div class="canvas">
+            <canvas id="myChart" width="50" height="50"></canvas>
+          </div>
 
-          <!--ランキング部分 for文で複製してね-->
-          <a href="~" class="rank">
+          <!--ランキング部分 for文で複製すればいい感じに並びます-->
+          <a href="status.html" class="rank">
             <span class="pnum">1</span>
             <span class="pname">ミミッキュ</span>
             <span class="urate">38.4%</span>
@@ -48,6 +51,7 @@
       var myChart = new Chart(ctx, {
         type: 'horizontalBar',
         data: {
+          //とりあえず上位10体表示してます。増減させてくれてok
           labels: ["ミミッキュ", "ゲッコウガ", "ランドロス",
             "リザードン", "ボーマンダ", "カバルドン", "カプ・コケコ",
             "メタグロス", "ギルガルド", "カプ・レヒレ", "カプ・テテフ", "ポリゴン2"],
