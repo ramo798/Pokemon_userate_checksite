@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>poke</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=750,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="status.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+  </head>
+  <body>
+    <div id="outer">
+      <div id="inner">
+        <div id="header">
+          <a href="ranking.html">poke info</a>
+        </div>
+        <div id="main">
+
+          <!--円グラフの本体-->
+          <div class="canvas">
+            <canvas id='mochi' width="1" height="1"></canvas>
+          </div>
+          <div class="canvas">
+            <canvas id='sei' width="1" height="1"></canvas>
+          </div>
+          <div class="canvas">
+            <canvas id='toku' width="1" height="1"></canvas>
+          </div>
+
+          <!--情報切り替え 対応する関数を呼び出し 他は非表示にする-->
+          <input type="button" class="rank" value="もちもの" onclick="mochimono();" />
+          <input type="button" class="rank" value="せいかく" onclick="seikaku();" />
+          <input type="button" class="rank" value="とくせい" onclick="tokusei();" />
+        </div>
+      </div>
+    </div>
+
+    <!--グラフの情報-->
+    <script>
+    //もちものに関するデータはここ
+    function mochimono(){
+      var ctx = document.getElementById("mochi").getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ["ミミッキュZ", "ゴーストZ", "きあいのタスキ", "いのちのたま", "そのた"],
+          datasets: [{
+            label: 'もちもの',
+            data: [48.4, 33.6, 13.7, 0.6, 0.4],
+            backgroundColor: [
+              '#e0543a',
+              '#e9ac39',
+              '#4eb198',
+              '#0c8081',
+              '#0e2e40',
+              '#b23023',
+            ],
+            borderColor: [
+            ],
+            borderWidth: 0.5
+          }]
+        },
+        options: {
+          title: {
+            display : true,
+            text: "ミミッキュのもちもの"
+          },
+
+          //ドーナツの穴の大きさ 0-50
+          cutoutPercentage: 50,
+          animation: {
+            //二メーションにかかる時間　初期値は1000です
+            duration: 1400,
+            //アニメーション後に関数呼び出しも可能
+          },
+        }
+      });
+      document.getElementById("mochi").style.display="block";
+      document.getElementById("sei").style.display="none";
+      document.getElementById("toku").style.display="none";
+    }
+
+    //せいかくに関するデータはここ
+    function seikaku(){
+      var ctx = document.getElementById("sei").getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ["いじっぱり", "ようき", "ゆうかん", "おくびょう", "そのた"],
+          datasets: [{
+            label: 'せいかく',
+            data: [81.6, 15.7, 0.9, 0.6, 0.4],
+            backgroundColor: [
+              '#e0543a',
+              '#e9ac39',
+              '#4eb198',
+              '#0c8081',
+              '#0e2e40',
+              '#b23023',
+            ],
+            borderColor: [
+            ],
+            borderWidth: 0.5
+          }]
+        },
+        options: {
+          title: {
+            display : true,
+            text: "ミミッキュのせいかく"
+          },
+
+          //ドーナツの穴の大きさ 0-50
+          cutoutPercentage: 50,
+          animation: {
+            //二メーションにかかる時間　初期値は1000です
+            duration: 1400,
+            //アニメーション後に関数呼び出しも可能
+          },
+        }
+      });
+      document.getElementById("mochi").style.display="none";
+      document.getElementById("sei").style.display="block";
+      document.getElementById("toku").style.display="none";
+    }
+
+    //とくせいに関するデータはここ
+    function tokusei(){
+      var ctx = document.getElementById("toku").getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ["ばけのかわ"],
+          datasets: [{
+            label: 'とくせい',
+            data: [100],
+            backgroundColor: [
+              '#e0543a',
+              '#e9ac39',
+              '#4eb198',
+              '#0c8081',
+              '#0e2e40',
+              '#b23023',
+            ],
+            borderColor: [
+            ],
+            borderWidth: 0.5
+          }]
+        },
+        options: {
+          title: {
+            display : true,
+            text: "ミミッキュのとくせい"
+          },
+
+          //ドーナツの穴の大きさ 0-50
+          cutoutPercentage: 50,
+          animation: {
+            //二メーションにかかる時間　初期値は1000です
+            duration: 1400,
+            //アニメーション後に関数呼び出しも可能
+          },
+        }
+      });
+      document.getElementById("mochi").style.display="none";
+      document.getElementById("sei").style.display="none";
+      document.getElementById("toku").style.display="block";
+    }
+    </script>
+
+    <script>
+      //初回のみmochiを呼び出す
+      var counter = 0;
+      //ページ遷移時の処理
+      if(counter == 0){
+        mochimono();
+        counter = 1;
+      }
+    </script>
+
+  </body>
+</html>

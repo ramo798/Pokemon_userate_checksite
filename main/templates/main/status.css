@@ -1,13 +1,3 @@
-/*
-Color Theme
-#eee6de vanila
-#5f5050 light brown
-#4c4041 dark brown
-#858734 yellow green
-#4e5829 dark green
-#333847 navy
-*/
-
 html, body{
   font-family: 'Avenir','Helvetica Neue','Helvetica',
   'Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,
@@ -46,15 +36,17 @@ html, body{
 }
 
 .canvas{
-  padding: 0 4em 4em 4em;
+  padding: 0 4em 0 4em;
   margin: 0 1em 0 1em;
 }
 
-a.rank{
+.rank{
   display: inline-block;
-  margin: 1em 0 1em 0;
+  margin: 5em 0 0 0;
   padding: 1.5em 3em 1.5em 3em;
   background: #858734;
+  color: white;
+  cursor: pointer;
 }
 
 a:link, a:visited{
@@ -62,7 +54,7 @@ a:link, a:visited{
   text-decoration: none; /*下線削除*/
 }
 
-a:hover{
+a:hover, .rank:hover{
   color: darkgray;
 }
 
