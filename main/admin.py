@@ -30,6 +30,7 @@ class ContentsAdmin(admin.ModelAdmin):
                     'wazarate10',
                     'wazarate11',
                     'wazarate12',
+                    'no',
                     )
 
 

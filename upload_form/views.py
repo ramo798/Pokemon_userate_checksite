@@ -24,6 +24,7 @@ def form(request):
     with open(path, 'r') as f:
         reader = csv.reader(f)
         header = next(reader)
+        tmp = 1
         for row in reader:
             mode = pokeinfo()
             mode.pokename = row[0]
@@ -44,6 +45,8 @@ def form(request):
             mode.wazarate6 = row[15]
             mode.wazarate7 = row[16]
             mode.wazarate8 = row[17]
+            mode.no = tmp
+            tmp = tmp + 1
             mode.save()
 
 

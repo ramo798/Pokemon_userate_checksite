@@ -27,3 +27,4 @@ class pokeinfo(models.Model):
     wazarate10 = models.CharField(max_length=10,null=True,blank=True)
     wazarate11 = models.CharField(max_length=10,null=True,blank=True)
     wazarate12 = models.CharField(max_length=10,null=True,blank=True)
+    no = models.CharField(max_length=10,null=True,blank=True)
