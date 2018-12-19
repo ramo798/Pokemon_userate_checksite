@@ -22,28 +22,14 @@
           </div>
 
           <!--ランキング部分 for文で複製すればいい感じに並びます-->
-          {% for itirana in itiran %}
+          {% for a in info %}
+          <a href="~" class="rank">
+            <span class="pnum">{{a.id}}</span>
+            <span class="pname">{{a.pokename}}</span>
+            <span class="urate">{{a.pokerate}}%</span>
+          </a>
           {% endfor %}
-          <a href="status.html" class="rank">
-            <span class="pnum">1</span>
-            <span class="pname">ミミッキュ</span>
-            <span class="urate">38.4%</span>
-          </a>
-          <a href="~" class="rank">
-            <span class="pnum">2</span>
-            <span class="pname">ゲッコウガ</span>
-            <span class="urate">28.7%</span>
-          </a>
-          <a href="~" class="rank">
-            <span class="pnum">3</span>
-            <span class="pname">ランドロス</span>
-            <span class="urate">27.5%</span>
-          </a>
-          <a href="~" class="rank">
-            <span class="pnum">4</span>
-            <span class="pname">リザードン</span>
-            <span class="urate">25.0%</span>
-          </a>
+
         </div>
       </div>
     </div>
