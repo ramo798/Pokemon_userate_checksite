@@ -1,7 +1,7 @@
 from django.db import models
 
 class pokeinfo(models.Model):
-    pokename = models.CharField(max_length=10,null=True,blank=True)
+    pokename = models.CharField(max_length=30,null=True,blank=True)
     pokerate = models.CharField(max_length=10,null=True,blank=True)
     waza1 = models.CharField(max_length=10,null=True,blank=True)
     waza2 = models.CharField(max_length=10,null=True,blank=True)
