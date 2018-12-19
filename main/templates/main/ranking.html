@@ -1,10 +1,11 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="ja">
   <head>
     <title>poke</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=750,initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="ranking.css"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/ranking.css' %}"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
   </head>
   <body>
@@ -21,6 +22,8 @@
           </div>
 
           <!--ランキング部分 for文で複製すればいい感じに並びます-->
+          {% for itirana in itiran %}
+          {% endfor %}
           <a href="status.html" class="rank">
             <span class="pnum">1</span>
             <span class="pname">ミミッキュ</span>

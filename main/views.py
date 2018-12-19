@@ -5,4 +5,8 @@ UPLOAD_DIR = os.path.dirname(os.path.abspath(__file__)) + '/static/files/'
 
 
 def index(request):
-    return render(request, 'main/index.html', {})
+    pokename = pokeinfo.objects.all()
+    d = {
+        'pokename': pokename,
+    }
+    return render(request, 'main/ranking.html', d)
