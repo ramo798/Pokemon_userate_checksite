@@ -1,0 +1,71 @@
+/*
+Color Theme
+#eee6de vanila
+#5f5050 light brown
+#4c4041 dark brown
+#858734 yellow green
+#4e5829 dark green
+#333847 navy
+*/
+
+html, body{
+  font-family: 'Avenir','Helvetica Neue','Helvetica',
+  'Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,
+  'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: center; /*水平*/
+  background: #eee6de;
+}
+
+#outer, #inner{
+  width: 750px;
+  margin: 0;
+  padding: 0;
+  background: #eee6de;
+}
+
+#header{
+  display: flex;
+  align-items: center; /*垂直*/
+  justify-content: center; /*水平*/
+  background: #5f5050;
+  color: white;
+  box-shadow: 0 1px 1px darkgray;
+  margin: 0 1em 1em 1em;
+  padding: 1em;
+}
+
+#main{
+  text-align: center;
+  margin: 1.5em;
+  padding: 1.5em;
+}
+
+.canvas{
+  padding: 0 4em 4em 4em;
+  margin: 0 1em 0 1em;
+}
+
+a.rank{
+  display: inline-block;
+  margin: 1em 0 1em 0;
+  padding: 1.5em 3em 1.5em 3em;
+  background: #858734;
+}
+
+a:link, a:visited{
+  color: white;
+  text-decoration: none; /*下線削除*/
+}
+
+a:hover{
+  color: darkgray;
+}
+
+.pnum , .pname , .urate{
+  padding: .5em;
+}

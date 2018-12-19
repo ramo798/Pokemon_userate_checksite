@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>poke</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=750,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="ranking.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+  </head>
+  <body>
+    <div id="outer">
+      <div id="inner">
+        <div id="header">
+          <a href="ranking.html">poke info</a>
+        </div>
+        <div id="main">
+
+          <!--棒グラフの本体-->
+          <div class="canvas">
+            <canvas id="myChart" width="50" height="50"></canvas>
+          </div>
+
+          <!--ランキング部分 for文で複製すればいい感じに並びます-->
+          <a href="status.html" class="rank">
+            <span class="pnum">1</span>
+            <span class="pname">ミミッキュ</span>
+            <span class="urate">38.4%</span>
+          </a>
+          <a href="~" class="rank">
+            <span class="pnum">2</span>
+            <span class="pname">ゲッコウガ</span>
+            <span class="urate">28.7%</span>
+          </a>
+          <a href="~" class="rank">
+            <span class="pnum">3</span>
+            <span class="pname">ランドロス</span>
+            <span class="urate">27.5%</span>
+          </a>
+          <a href="~" class="rank">
+            <span class="pnum">4</span>
+            <span class="pname">リザードン</span>
+            <span class="urate">25.0%</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!--棒グラフの設定-->
+    <script>
+      var ctx = document.getElementById("myChart").getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+          //とりあえず上位10体表示してます。増減させてくれてok
+          labels: ["ミミッキュ", "ゲッコウガ", "ランドロス",
+            "リザードン", "ボーマンダ", "カバルドン", "カプ・コケコ",
+            "メタグロス", "ギルガルド", "カプ・レヒレ", "カプ・テテフ", "ポリゴン2"],
+          datasets: [{
+            label: '使用率［％］',
+            //ここにデータを入れる
+            data: [38.4, 28.7, 27.5, 25.0, 22.9, 20.4, 19.0,
+              18.4, 17.9, 16.9, 16.7, 15.4],
+            backgroundColor: [
+              '#e0543a',
+              '#e9ac39',
+              '#4eb198',
+              '#0c8081',
+              '#0e2e40',
+              '#b23023',
+              '#e0543a',
+              '#e9ac39',
+              '#4eb198',
+              '#0c8081',
+              '#0e2e40',
+              '#b23023',
+            ],
+          }]
+        },
+        options: {
+          title: {
+            //タイトル消してます
+            display : false,
+            text: "パーティ採用率"
+          },
+          animation: {
+            //二メーションにかかる時間　初期値は1000です
+            duration: 1600,
+            //アニメーション後に関数呼び出しも可能
+          },
+        }
+      });
+    </script>
+
+  </body>
+</html>
