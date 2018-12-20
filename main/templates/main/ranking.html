@@ -20,17 +20,18 @@
           <div class="canvas">
             <canvas id="myChart" width="50" height="50"></canvas>
           </div>
+          {% for b in graf %}
+          <p>{{b.no}}</p>
+          {% endfor %}
+
 
           <!--ランキング部分 for文で複製すればいい感じに並びます-->
           {% for a in info %}
-
-
           <a href="~" class="rank">
             <span class="pnum">{{a.no}}</span>
             <span class="pname">{{a.pokename}}</span>
             <span class="urate">{{a.pokerate}}%</span>
           </a>
-
           {% endfor %}
 
         </div>
